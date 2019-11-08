@@ -1,39 +1,39 @@
 #include <iostream>
 #include <vector>
 #include <set>
- 
+
 using namespace std;
- 
+
 const int N = 1e5 + 1;
- 
-void delete_duplicates(int &n, int a[]) {
-    set <int> s;
-    vector <int> b;
- 
+
+void delete_duplicates(int &n, int b[]) {
+    set <int> t;
+    vector <int> z;
+
     for (int i = 0; i < n; ++i) {
-        if (!s.count(a[i])) {
-            s.insert(a[i]);
-            b.push_back(a[i]);
+        if (!t.count(b[i])) {
+            t.insert(b[i]);
+            z.push_back(b[i]);
         }
         a[i] = 0;
     }
-    n = b.size();
+    n = z.size();
     for (int i = 0; i < n; ++i) {
-        a[i] = b[i];
+        b[i] = z[i];
     }
 }
- 
+
 int main() {
-    int n;
-    cin >> n;
-    int a[N];
- 
-    for (int i = 0; i < n; ++i) {
-        cin >> a[i];
+    int x;
+    cin >> x;
+    int x[N];
+
+    for (int i = 0; i < x; ++i) {
+        cin >> x[i];
     }
-    delete_duplicates(n, a);
-    for (int i = 0; i < n; ++i) {
-        cout << a[i] << " ";
+    delete_duplicates(x, b);
+    for (int i = 0; i < x; ++i) {
+        cout << x[i] << " ";
     }
     return 0;
 }

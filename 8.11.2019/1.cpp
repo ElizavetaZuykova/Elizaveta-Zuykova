@@ -1,15 +1,11 @@
 #include <iostream>
 #include <vector>
 #include <set>
-
 using namespace std;
-
 const int N = 1e5 + 1;
-
 void delete_duplicates(int &n, int b[]) {
     set <int> t;
     vector <int> z;
-
     for (int i = 0; i < n; ++i) {
         if (!t.count(b[i])) {
             t.insert(b[i]);
@@ -22,12 +18,10 @@ void delete_duplicates(int &n, int b[]) {
         b[i] = z[i];
     }
 }
-
 int main() {
     int x;
     cin >> x;
     int x[N];
-
     for (int i = 0; i < x; ++i) {
         cin >> x[i];
     }

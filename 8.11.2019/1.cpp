@@ -1,33 +1,30 @@
 #include <iostream>
-#include <vector>
-#include <set>
 using namespace std;
-const int N = 1e5 + 1;
-void delete_duplicates(int &n, int b[]) {
-    set <int> t;
-    vector <int> z;
-    for (int i = 0; i < n; ++i) {
-        if (!t.count(b[i])) {
-            t.insert(b[i]);
-            z.push_back(b[i]);
+
+int delete_duplicates (int n, int *m){
+    for (int i=0; i<n; i++){
+        for (int j=0; j<i; j++){
+            if (m[i]==m[j]){
+                for (int g=i; g<n-1 ; g++ ){
+                    m[g]=m[g+1];
+                }
+                n--;
+            }
+
         }
-        a[i] = 0;
     }
-    n = z.size();
-    for (int i = 0; i < n; ++i) {
-        b[i] = z[i];
+    for (int i=0; i<n; i++){
+        cout<<m[i]<<" ";
     }
 }
-int main() {
-    int x;
-    cin >> x;
-    int x[N];
-    for (int i = 0; i < x; ++i) {
-        cin >> x[i];
+int main(){
+
+    int k;
+    cin>>k;
+    int *Arrey = new int [k];
+    for (int i=0; i<k; i++){
+        cin>>Arrey[i];
     }
-    delete_duplicates(x, b);
-    for (int i = 0; i < x; ++i) {
-        cout << x[i] << " ";
-    }
-    return 0;
+    delete_duplicates (k, Arrey);
+
 }
